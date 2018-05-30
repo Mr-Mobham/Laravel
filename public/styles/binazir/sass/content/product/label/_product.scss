@@ -1,0 +1,123 @@
+#product{
+  .objects{
+    @extend .dir;
+    width: 680px;
+    padding-top: 12px;
+    @media#{$Medium}{
+      width: $width;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .product---real{
+      @media#{$tablet }{
+        margin-bottom: 17px;
+      }
+      .min--product{
+        margin-left: 30px;
+        margin-top: 2.5px;
+        @media#{$Medium}{
+          width: $width;
+          margin-bottom: 10px;
+          margin-left: 20px;
+        }
+        .title{
+          @include Bold(14);
+          color: #7f7f7f;
+        }
+        .bg--trun{
+          width: 56px;
+          height: 24px;
+          background: #e5e5e5;
+          border-radius: 25px;
+          margin-right: 10px;
+          cursor: pointer;
+          padding-left: 6px;
+          padding-right:2px;
+          position: relative;
+          .Circle{
+            border-radius: 50px;
+            width: 21px;
+            height: 21px;
+            background: $white;
+            display: block;
+            margin-top: 2px;
+            transition: all 110ms ease-in;
+            z-index: 1;
+          }
+          .turn{
+            transition: all 110ms ease-in;
+            margin-right: 30px;
+          }
+          .on{
+            @include Bold(12);
+            color: #7ab606;
+            margin-top: 3px;
+            position: absolute;
+            left: 4px;
+            top: 1px;
+            transition: all 110ms ease-in;
+          }
+          .off{
+            @include Bold(12);
+            color: #fff;
+            margin-top: 3px;
+            position: absolute;
+            right: 4px;
+            top: 1px;
+            transition: all 110ms ease-in;
+            display: none;
+
+          }
+        }
+      }
+      .min--select{
+        position: relative;
+        margin-left:10px;
+        &:nth-child(5){
+          margin-left:0px;
+        }
+        @media#{$mobile-big}{
+          margin-bottom: 6px;
+        }
+        @media#{$mobile-big}{
+          width: $width;
+          text-align: center;
+        }
+        .select{
+          -webkit-appearance: none;
+          -moz-appearance:    none;
+          appearance:         none;
+          border: solid 1px #bcbcbc;
+          border-radius: 5px;
+          padding-right: 5px;
+          @include Bold(12);
+          color: #898989;
+          padding-left: 5px;
+          width: 116px;
+          height: 30px;
+          background: #fafafa;
+          position: relative;
+          @media#{$mobile-big}{
+            width: $width;
+            text-align: center;
+          }
+        }
+        .arrow-down_icon{
+          position: absolute;
+          top: 9px;
+          left: 7px;
+          width: 14px;
+          height: 14px;
+          z-index: 1;
+          transform: rotate(090deg);
+        }
+      }
+    }
+  }
+  .min_text{
+    width: 400px;
+    @media#{$mobile}{
+      width: 90%;
+    }
+  }
+}

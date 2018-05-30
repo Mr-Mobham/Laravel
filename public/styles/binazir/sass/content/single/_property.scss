@@ -1,0 +1,160 @@
+#Shop_single{
+  .property{
+    width: $width;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    .menu{
+      width: $width;
+      cursor: default;
+      @media#{$mobile}{
+        text-align: center;
+      }
+      ul{
+        border-bottom: solid 1px #dddddd;
+        li{
+          display: inline-block;
+          transition: all 35ms ease-in-out;
+          margin-left: 50px;
+          @media screen and ("max-width:500px"){
+            margin-left: 40px;
+          }
+          @media#{$mobile}{
+            width: $width;
+          }
+          &:first-child{
+            margin-right: 20px;
+            @media screen and ("max-width:500px"){
+              margin-right: 0px;
+            }
+          }
+          &:last-child{
+            margin-left: 0px;
+          }
+          .line-down{
+            width: $width;
+            border-top: solid 7px $other;
+            transition: all 35ms ease-in-out;
+            display: block;
+            position: relative;
+            top: 0px;
+            opacity: 0;
+            @media screen and ("max-width:500px"){
+              display: none;
+            }
+            @media#{$mobile}{
+              display: none;
+            }
+          }
+        }
+        .line--shop{
+          @media#{$mobile}{
+            background: #656476;
+          }
+          .line-down{
+            opacity: 1;
+            transition: all 35ms ease-in-out;
+          }
+          a{
+            color: $other;
+            transition: all 35ms ease-in-out;
+            @media#{$mobile}{
+              color: $white;
+            }
+          }
+        }
+        a{
+          @include Bold(20);
+          color: #969696;
+          transition: all 35ms ease-in-out;
+          display: block;
+          padding-bottom: 12px;
+          padding-top: 12px;
+          @media#{$mobile-big}{
+            font-size: 17px;
+          }
+        }
+      }
+    }
+    .subject{
+      width: $width;
+      display: none;
+      &:nth-child(2){
+        display: block;
+      }
+      &:nth-child(3){
+        @media#{$mobile-big}{
+          width: $width;
+          overflow-x: scroll;
+        }
+      }
+      p{
+        @include Medium(18);
+        color: #000000;
+        @media#{$mobile-big}{
+          font-size: 17px;
+        }
+        @media#{$mobile-min}{
+          padding-right: 8px;
+        }
+        a{
+          @include Medium(23);
+          color: #832b7c;
+          @media#{$mobile-big}{
+            font-size: 17px;
+          }
+        }
+      }
+      table{
+          margin-bottom: 8px;
+          background: #fff;
+          @include Bold(20);
+          cursor: default;
+          border-collapse: separate;
+          border-spacing: 3px;
+          word-break: normal;
+          padding-top: 25px;
+          @media#{$mobile-big}{
+            font-size:16px;
+          }
+      }
+      td {
+        padding-right: 13px;
+        color: #969696;
+        padding-top: 8px;
+        padding-bottom: 10px;
+        width: 0px;
+        word-break: normal;
+      }
+      th{
+        margin-left: 8px;
+        border-bottom: solid 4px #9d759a;
+        @include Bold(20);
+        padding-top: 6px;
+        padding-bottom: 8px;
+        color: $other;
+        background: #f6f6f6;
+        word-break: normal;
+        vertical-align: top;
+        @media#{$mobile-big}{
+          font-size:16px;
+          text-align: center;
+        }
+      }
+      tr{
+        word-break: normal;
+        vertical-align: top;
+        &:nth-child(even){
+          background: #fafafa;
+        }
+        &:nth-child(odd){
+          background: #fafafa;
+        }
+      }
+
+    }
+    .hide--item{
+      display: block !important;
+
+    }
+  }
+}

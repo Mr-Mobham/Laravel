@@ -1,0 +1,15 @@
+.shop---index{
+  position: relative;
+  .Sort{
+    top: 90px;
+    @media#{$tablet}{
+      top: 190px;
+    }
+    @media#{$mobile-big}{
+      margin-top: 420px;
+      z-index: 11;
+      top: 0px;
+      background: #363432;
+   }
+  }
+}

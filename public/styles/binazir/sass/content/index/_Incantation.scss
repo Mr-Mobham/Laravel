@@ -1,0 +1,75 @@
+.Incantation{
+  width: $width;
+  padding-bottom: 60px;
+  @extend .dir;
+  .img--poster-right{
+    width: 424px;
+    border-radius: 2px;
+    @media#{$tablet}{
+      width: 42%;
+      max-height: 262px;
+    }
+    @media#{$mobile-big}{
+      display: none;
+    }
+    .img{
+      border: solid 1px #dbdbdb;
+      border-radius: 1px;
+      @media#{$tablet}{
+        width: $width;
+      }
+    }
+  }
+  .img--poster-left{
+    width: 725px;
+    border-radius: 2px;
+    border: solid 1px #dbdbdb;
+    position: relative;
+    @media#{$tablet}{
+      width: 57%;
+      max-height: 262px;
+    }
+    @media#{$mobile-big}{
+      display: none;
+    }
+    .img{
+      border: solid 1px #dbdbdb;
+      border-radius: 1px;
+      @media#{$tablet}{
+        width: $width;
+      }
+    }
+  }
+  .group-product{
+    width: $width;
+    margin-top: 20px;
+    &:last-of-type{
+      margin-top: 0px;
+    }
+    .carousel-cell{
+      width: $width;
+    }
+    .flickity-prev-next-button.next{
+      top: 140px;
+      right: -70px;
+      background: none;
+      fill:#ababab;
+      width: 75px;
+      height: 75px;
+      @media#{$desktop}{
+        display: none;
+      }
+    }
+    .flickity-prev-next-button.previous{
+      top: 140px;
+      left: -70px;
+      background: none;
+      fill:#ababab;
+      width: 75px;
+      height: 75px;
+      @media#{$desktop}{
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,163 @@
+.Products{
+  width: $width;
+  .items{
+    width: $width;
+    .item{
+      width: 277px;
+      margin-left: 20px;
+      border: solid 1px #e8e8e8;
+      padding: 2px;
+      position: relative;
+      transition: all 95ms ease-out;
+      margin-bottom: 70px;
+      @media#{$tablet}{
+        width: 23.5%;
+        margin-left: 2%;
+      }
+      @media#{$Medium}{
+        width: 49%;
+        &:nth-child(2n){
+          margin-left: 0px;
+        }
+      }
+      @media#{$mobile-big }{
+        width: $width;
+        &:nth-child(1n){
+          margin-left: 0px;
+        }
+      }
+      &:nth-child(4n){
+        margin-left: 0px;
+      }
+      &:hover{
+        border-color: #d2b16f;
+        transition: all 95ms ease-out;
+        padding-bottom: 33px;
+        margin-bottom: 35px;
+        .img_user{
+          opacity: .5;
+          transition: all 95ms ease-out;
+        }
+        .Products-min {
+          .button{
+            transition: all 95ms ease-out;
+            background: #b64eae;
+            top: 39px;
+          }
+          .Mors .more--info{
+            opacity: 1;
+            transition: all 95ms ease-out;
+          }
+          .stars{
+            transition: all 95ms ease-out;
+            opacity: 1;
+          }
+        }
+      }
+
+      .img_user{
+        width: $width;
+        max-height: 182px;
+        transition: all 95ms ease-out;
+      }
+      .Products-min{
+        width: $width;
+        text-align: center;
+        .title{
+          @include Bold(20);
+          color: #6b6b6b;
+          margin-top: 13px;
+          margin-bottom: 10px;
+        }
+        .border--bottom{
+          width: 55px;
+          border-top: solid 4px $other;
+          display: block;
+          margin: auto;
+          border-radius: 1px;
+          transition: all 95ms ease-out;
+        }
+        .value{
+          @include Bold(18);
+          color: $other;
+          padding-top: 11px;
+          padding-bottom: 14px;
+          .Plank{
+            @include Web(12);
+            color: #832b7c;
+          }
+        }
+        .button{
+          width:84px;
+          height: 28px;
+          background: $other;
+          text-align: center;
+          border: none;
+          position: relative;
+          cursor: pointer;
+          top: 9px;
+          transition: all 95ms ease-out;
+          .plus--icon{
+            width: 14px;
+            height: 14px;
+            margin-top: -2px;
+          }
+        }
+        .Mors{
+          position: absolute;
+          top: 30px;
+          right: 0px;
+          left: 0px;
+          margin: auto;
+          padding-top: 30px;
+          .more--info{
+            @include Bold(14);
+            color: $white;
+            text-align: center;
+            width: 134px;
+            height: 45px;
+            background: #d0ad67;
+            border: none;
+            opacity: 0;
+            transition: all 95ms ease-out;
+            z-index: 12;
+            cursor: pointer;
+          }
+        }
+        .stars{
+          width: $width;
+          text-align: center;
+          margin-top: -30px;
+          transition: all 95ms ease-out;
+          opacity: 0;
+          .star--icon{
+            width: 20px;
+            height: 20px;
+            fill:#fff;
+            stroke-width: 4;
+            stroke: #2e2e2e;
+          }
+          .goolden{
+            fill:#f4bd47;
+          }
+        }
+
+      }
+      .slake{
+        width: 57px;
+        height: 47px;
+        text-align: center;
+        @include Bold(18);
+        color: $white;
+        border-bottom-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        position: absolute;
+        top: 0px;
+        right: 25px;
+        background: #d0ad67;
+        padding-top: 6px;
+        z-index: 3;
+      }
+    }
+  }
+}

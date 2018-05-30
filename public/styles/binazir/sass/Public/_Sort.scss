@@ -1,0 +1,105 @@
+.Sort{
+  position: absolute;
+  top: 1px;
+  width: 423px;
+  height: 388px;
+  @extend .dir;
+  background: $other;
+  z-index: 11;
+  right: 530px;
+  overflow: scroll;
+  overflow-x: hidden;
+  direction: ltr;
+  display: none;
+  @media#{$tablet}{
+    right: 20%;
+  }
+  @media#{$mobile-big}{
+    width: $width;
+    right: 0px;
+    height: 410px;
+  }
+
+  .items{
+    width: $width;
+    position: relative;
+    @extend .dir;
+    .item{
+      width: $width;
+      padding-right: 20px;
+      padding-left: 20px;
+      border-bottom: solid 1px #b077ab;
+      padding-top: 13px;
+      padding-bottom: 13px;
+      position: relative;
+      .min_image{
+        .link{
+          display: inline-block;
+          margin: 0px;
+          padding: 0px;
+          .img_Produce{
+            width: 128px;
+            height: 90px;
+            background: $white;
+          }
+        }
+      }
+      .min_info{
+        width: 222px;
+        padding-right: 15px;
+        padding-top: 4px;
+        @media#{$mobile }{
+          width: $width;
+          padding-top: 8px;
+          padding-right: 0px;
+        }
+        .Produce_info{
+          margin-bottom: 0px;
+          .link{
+            margin: 0px;
+            padding: 0px;
+            margin-bottom: 5px;
+            .title{
+              @include Bold(18);
+              color: $white;
+            }
+          }
+        }
+        .Price{
+          width: $width;
+          @include Bold(12);
+          cursor: default;
+          color: $white;
+          .Number{
+            color: $white;
+            @include Bold(18);
+          }
+        }
+        .icon_close{
+          width: 27px;
+          height: 27px;
+          position: absolute;
+          left: 015px;
+          top:19px;
+          cursor: pointer;
+        }
+      }
+      .button{
+        width: 120px;
+        @include Web(18);
+        color: $white;
+        text-align: center;
+        padding-right: 13px;
+        padding-left: 13px;
+        background: #d0ad67;
+        margin: 12px auto 5px auto;
+        display: block;
+        transition: all 95ms ease-in-out;
+        &:hover{
+          transition: all 95ms ease-in-out;
+          opacity: .75;
+        }
+      }
+    }
+  }
+}

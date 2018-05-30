@@ -1,0 +1,18 @@
+#Shop_menu{
+  li{
+    margin-left: 20px;
+    .message{
+      @media#{$mobile-big}{
+        right: 60%;
+      }
+      @media#{$mobile}{
+        right: 65%;
+      }
+    }
+  }
+  .shape{
+    width: 31px;
+    height: 31px;
+    margin-top: 8px;
+  }
+}
