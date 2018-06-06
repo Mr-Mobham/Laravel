@@ -5,15 +5,11 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Model\Filter\Model_Products;
-use App\Model\Filter\Model_Ram;
-use App\Model\Filter\Model_Colors;
-use App\Model\Filter\Model_Brands;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use DB;
 
-
-class Products extends Controller
+class Colors extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,14 +19,9 @@ class Products extends Controller
 
     public function index()
     {
-      $products      = Model_Products::get();
-      $colors        = Model_Colors::get();
-      $Arry_Product  = $products;
-      $Arry_Colors   = $colors;
-      $Nested_Arry   = array('Brands'=>$Arry_Product,"Colors"=>$Arry_Colors);
-      $Res_Arry      = array("Products"=>$Nested_Arry);
+        $products   = Model_Products::get();
 
-      return $Res_Arry;
+        return $products;
     }
 
     public function params(Request $req){
@@ -76,12 +67,6 @@ class Products extends Controller
            return new Run_Prog($res);
          }
      }
-
-    public function show($id)
-    {
-      $res = Model_Filter::findOrFail($id);
-      return new Run_Prog($res);
-    }
 
 
     public function destroy($id)

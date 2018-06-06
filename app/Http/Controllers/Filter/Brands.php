@@ -2,35 +2,22 @@
 
 namespace App\Http\Controllers\Filter;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
-use App\Model\Filter\Model_Products;
-use App\Model\Filter\Model_Ram;
-use App\Model\Filter\Model_Colors;
-use App\Model\Filter\Model_Brands;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use App\Model\Filter\Model_Brands;
 
 
-class Products extends Controller
+class Brands extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
     public function index()
     {
-      $products      = Model_Products::get();
-      $colors        = Model_Colors::get();
-      $Arry_Product  = $products;
-      $Arry_Colors   = $colors;
-      $Nested_Arry   = array('Brands'=>$Arry_Product,"Colors"=>$Arry_Colors);
-      $Res_Arry      = array("Products"=>$Nested_Arry);
+      $brands = Model_Brands::get();
 
-      return $Res_Arry;
+
+      return $brands;
     }
 
     public function params(Request $req){

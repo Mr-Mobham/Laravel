@@ -21,7 +21,11 @@ Route::put('data_table', 'Table\Data_Table@store')->middleware('auth:api');
 Route::delete('data_table/{id}', 'Table\Data_Table@destroy')->middleware('auth:api');
 
 
-Route::get('products', 'Search\Products@index');
+
+
+
+
+Route::get('products', 'Filter\Products@index');
 Route::get('products/{search}', 'Filter\Products@params');
 
 

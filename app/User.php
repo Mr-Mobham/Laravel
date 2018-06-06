@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+use App\Model\Filter\Model_Colors;
 
 
 class User extends Authenticatable
@@ -17,6 +18,10 @@ class User extends Authenticatable
    use HasApiTokens, Notifiable , HasRoles;
 
    protected $guard_name = 'web';
+
+   public function phone(){
+     return $this->hasOne(Model_Colors::class,'id');
+   }
 
 
    /**
@@ -48,10 +53,6 @@ class User extends Authenticatable
        'password', 'remember_token',
    ];
 
-
-   public function test(){
-       return $this->hasMany('App\Model\Products\Model_Recently_Products');
-  }
 
 
 
