@@ -25,7 +25,7 @@ Route::delete('data_table/{id}', 'Table\Data_Table@destroy')->middleware('auth:a
 
 
 
-Route::get('products', 'Filter\Products@index');
+Route::get('products', 'Filter\Products@index')->middleware('auth:api');
 Route::get('products/{search}', 'Filter\Products@params');
 
 

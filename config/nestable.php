@@ -11,6 +11,8 @@ return [
         'href',
         'user_id',
         'img',
+        'type',
+        'value',
     ],
     'html' => [
         'label' => 'name',
