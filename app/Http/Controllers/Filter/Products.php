@@ -22,7 +22,7 @@ class Products extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function index(Request $req)
+     public function index( )
     {
       $products       = Model_Products::get();
       $colors         = Model_Colors::get();
@@ -43,43 +43,18 @@ class Products extends Controller
 
       return $menu;
     }
-
-
-
-
     public function params(Request $req){
-
-
-      //
-      // if (count($req->all()) == '1') {
-      //   $res_size   = $req->size;
-      //   $res_ram    = $req->ram;
-      //
-        // $res        = DB::table('products2')->where('size','=',$res_size)->orwhere('ram','=',$req->ram)->get();
-      // }
-      // else {
-      //   $res_size   = ;
-      //   $res_ram    = ['ram', '=', $req->ram];
-      //
-      //   $res = DB::table('products2')->where([
-      //     $res_size,
-      //     $res_ram,
-      //   ])->get();
-      // }
-      // $keywords = explode(',', $test);
-        // $res_ram    = ['ram', '=', $req->ram];
-        //
-        //   $res = DB::table('products2')->where([
-        //     $res_ram,
-        //   ])->get();
 
           $res_size   = $req->size;
           $res_ram    = $req->ram;
-          $res        = DB::table('products2')->where(function($query){
+
+          $res        = DB::table('products2')->where(function ($query) use ($res_ram, $res_size){
             foreach($res_ram as $select) {
                   $query->orWhere('ram', '=', $select);
+                  $query->orWhere('size', '=', $res_size);
                }
           })->get();
+
 
 
 

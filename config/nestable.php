@@ -12,7 +12,8 @@ return [
         'user_id',
         'img',
         'type',
-        'value',
+        'ram',
+        'size',
     ],
     'html' => [
         'label' => 'name',

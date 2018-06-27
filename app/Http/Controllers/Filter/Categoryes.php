@@ -8,7 +8,6 @@ use App\Model\Products\Model_Categoryes;
 use App\Http\Resources\Products\Article as Run_Prog;
 use App\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
 
 class Categoryes extends Controller
 {
