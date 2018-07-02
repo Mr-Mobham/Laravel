@@ -8,7 +8,7 @@ use Nestable\NestableTrait;
 
 class Model_Categoryes extends Model
 {
-    protected $table   = 'categoryes';
+    protected $table   = 'menu_nested';
     public $primry_key = 'id';
     public $timestamp  = true;
 

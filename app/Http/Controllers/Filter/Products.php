@@ -45,18 +45,26 @@ class Products extends Controller
     }
     public function params(Request $req){
 
-          $res_size   = $req->size;
           $res_ram    = $req->ram;
+          $res_size   = $req->size;
 
-          $res        = DB::table('products2')->where(function ($query) use ($res_ram, $res_size){
-            foreach($res_ram as $select) {
-                  $query->orWhere('ram', '=', $select);
-                  $query->orWhere('size', '=', $res_size);
-               }
+          $res        = DB::table('products2')->where(function ($query) use ($res_ram, $res_size,$req){
+              $collection_ram  = collect($res_ram);
+              $collection_size = collect($res_size);
+
+              if($collection_ram->isNotEmpty()){
+                foreach($res_ram as $ram) {
+                  $query->orWhere('ram', '=', $ram);
+                }
+              }
+              
+                if($collection_size->isNotEmpty()){
+                  foreach ($res_size as $key => $size) {
+                    $query->orWhere('size', '=', $size);
+                  }
+                }
+
           })->get();
-
-
-
 
       return $res;
     }

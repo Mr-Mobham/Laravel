@@ -13,21 +13,19 @@ Route::group(['middleware' => 'auth:api'], function(){
 Route::post('get-details', 'API\PassportController@getDetails');
 });
 
+//
+// Route::get('data_table', 'Table\Data_Table@index')->middleware('auth:api');
+// Route::post('data_table', 'Table\Data_Table@store')->middleware('auth:api');
+// Route::put('data_table', 'Table\Data_Table@store')->middleware('auth:api');
+// Route::delete('data_table/{id}', 'Table\Data_Table@destroy')->middleware('auth:api');
+
+
+
+
 Route::get('category', 'Products\Categoryes@index')->middleware('auth:api');
-
-Route::get('data_table', 'Table\Data_Table@index')->middleware('auth:api');
-Route::post('data_table', 'Table\Data_Table@store')->middleware('auth:api');
-Route::put('data_table', 'Table\Data_Table@store')->middleware('auth:api');
-Route::delete('data_table/{id}', 'Table\Data_Table@destroy')->middleware('auth:api');
-
-
-
-
-
-
 Route::get('products', 'Filter\Products@index')->middleware('auth:api');
 Route::get('products/{search}', 'Filter\Products@params');
-
+Route::get('companys', 'Filter\NameCompany@index');
 
 
 
