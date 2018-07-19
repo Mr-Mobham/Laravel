@@ -45,26 +45,46 @@ class Products extends Controller
     }
     public function params(Request $req){
 
-          $res_ram    = $req->ram;
-          $res_size   = $req->size;
+          $res_ram            = $req->ram;
+          $res_size           = $req->size;
+          $res_company        = $req->company;
+          $res_sim_cart       = $req->sim_cart;
+          $res_available      = $req->available;
 
-          $res        = DB::table('products2')->where(function ($query) use ($res_ram, $res_size,$req){
-              $collection_ram  = collect($res_ram);
-              $collection_size = collect($res_size);
-
-              if($collection_ram->isNotEmpty()){
-                foreach($res_ram as $ram) {
-                  $query->orWhere('ram', '=', $ram);
+            $res   = DB::table('products2')->where(function ($query) use ($res_sim_cart){
+              $collection_sim_cart  = collect($res_sim_cart);
+                if ($collection_sim_cart->isNotEmpty()) {
+                    foreach ($res_sim_cart as $key => $sim_cart) {
+                      $query->orWhere('sim_card', '=', $sim_cart);
+                    }
+                }
+            })->where(function ($query) use ($res_available) {
+              $collection_available = collect($res_available);
+              if ($collection_available->isNotEmpty()) {
+                $query->Where('available', '=', $res_available);
+              }
+            })->where(function ($query) use ($res_company) {
+              $collection_company = collect($res_company);
+              if ($collection_company->isNotEmpty()) {
+                foreach ($res_company as $key => $company) {
+                  $query->orWhere('companyName', '=', $company);
                 }
               }
-              
+            })->where(function ($query) use ($res_ram) {
+                $collection_ram  = collect($res_ram);
+                if($collection_ram->isNotEmpty()){
+                  foreach($res_ram as $ram) {
+                    $query->orWhere('ram', '=', $ram);
+                  }
+                }
+            })->where(function ($query) use ($res_size) {
+                $collection_size = collect($res_size);
                 if($collection_size->isNotEmpty()){
                   foreach ($res_size as $key => $size) {
                     $query->orWhere('size', '=', $size);
                   }
                 }
-
-          })->get();
+            })->get();
 
       return $res;
     }

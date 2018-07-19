@@ -14,6 +14,7 @@ return [
         'type',
         'ram',
         'size',
+        'company_name',
     ],
     'html' => [
         'label' => 'name',
