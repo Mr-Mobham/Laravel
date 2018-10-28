@@ -23,6 +23,8 @@ class Categoryes extends Controller
         $user_id    = $user->id;
         $categories =  Model_Categoryes::where('user_id',$user_id)->get();
         $menu       =  nestable()->make($categories)->renderAsArray();
+
+        var_dump('test');
         return $menu;
     }
 
